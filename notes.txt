@@ -1,0 +1,18 @@
+Here React.createElement() is just a object which will be turned to html tag by the render method by creating a tree in the dom.
+ReactElement(Object) => HTML(Browser Understands)
+Whenever we pass root.render, the contents in div.#root will be replaced by that.
+We can use react in uor existing project because it wil only affect only the root html tag. That's why its a library not a framework.
+
+Bundler: It packages our app properly so that it could be shipped to production such as webpack, parcel or vite.
+
+dependencies & dev-dependencies
+
+package-lock.json: It keeps the track of all the versions of all dependencies.
+
+To install a package we use 'npm' and to use any package we use 'npx'.
+
+- if we want to remove console.log(*) calls from our production build files, use babel-plugin-transform-remove-console package
+
+
+- JSX: React came up with a philosophy that we have to update html using javascript. It is HTML like syntax but not HTML syntax.
+    
