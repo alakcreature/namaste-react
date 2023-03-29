@@ -15,4 +15,17 @@ To install a package we use 'npm' and to use any package we use 'npx'.
 
 
 - JSX: React came up with a philosophy that we have to update html using javascript. It is HTML like syntax but not HTML syntax.
-    
+
+
+
+
+
+Ep-4
+
+- one way data binding: that's why input tag is controlled by react and we must use usetstate to handle it properly. one reason for this is to let other component
+  & the same component know when input value is changing.
+- two way binding: using usestate 
+- Hooks are normal function
+- useState hook is used to create a local state variable
+- Why usestate is used?: to provide react about every local state variable so that it knows where to update the dom.
+- 
