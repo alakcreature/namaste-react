@@ -5,12 +5,16 @@ function Header() {
   return (
     <div className="header">
       <Title />
-      <ul className="nav-items">
-        <li>Home</li>
-        <li>About</li>
-        <li>Contact</li>
-        <li>Cart</li>
-      </ul>
+      <div className="nav-items">
+        <ul>
+          <li>Home</li>
+          <li>About</li>
+          <li>Contact</li>
+          <li>Cart</li>
+        </ul>
+      </div>
+      <button>Login</button>
+      <button>Logout</button>
     </div>
   );
 }
