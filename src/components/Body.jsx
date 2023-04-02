@@ -45,7 +45,7 @@ function Body() {
   }, []);
 
   // conditional rendering
-  // if restaurant is not there => shimer loader
+  // if restaurant is not there => shimmer loader
   // if it is => actual data
 
   if(!restaurantList) return null;

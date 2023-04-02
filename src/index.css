@@ -8,10 +8,15 @@
 
 .nav-items > ul {
     list-style: none;
-    display: none;
+    display: flex;
 }
 
-.nav-items > ul >li {
+a {
+    text-decoration: none;
+    color: black;
+}
+
+.nav-items > ul > a >li {
     padding: 10px;
 }
 
@@ -33,6 +38,14 @@
 
 
 .restaurant-list {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    display: flex;
+    flex-wrap: wrap;
+}
+
+
+.shimmer-card {
+    width: 200px;
+    height: 200px;
+    background-color: lightgray;
+    margin: 20px;
 }
