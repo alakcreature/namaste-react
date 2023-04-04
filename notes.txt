@@ -47,3 +47,28 @@ EP - 7
 - Never write usestate & useeffect inside if else block or inside for loop
 - React router dom & configured createBrowserRouter
 - Dynamic Router
+
+
+
+
+EP - 8
+-nested routes = parentPath/{path} => localhost:1234/about/profile  = path:"profile" 
+- class based components
+  - We cannot render anything without render method
+  - Render method return some jsx
+  - React will attach all the props to class (this)
+  - why do we call super in class based components?
+  - why can't we make useeffect callback function async?
+  - constructor is a place where we initialization of state variables takes place
+  - We do not mutate state directly, because react will have to know when to re-render the app. It keeps UI in sync.
+  - Lifecycle Methods
+    - constructor
+    - render
+    - componentDidMount
+    - componentDidUpdate
+    - componentWillUnmount
+- React first renders all the child components, then start commit phase for all child components (while updating in the actual dom)
+  - All constructor and render methods are part of render phase & componentDidMount, componentDidUpdate, componentWillUnmount are a part of commit phase in which
+    actual DOM gets updated.
+- When we use async in front of componentDidMount, then it will delay the componentDidMount to run and it will go ahead with Parent - componentDidMount to run. 
+- Whenever we change the page via route, then we need to clear somethings in that component
