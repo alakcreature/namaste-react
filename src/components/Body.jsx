@@ -37,6 +37,7 @@ function Body() {
   };
 
 
+
   // empty dependency array => once after every render
   // dep array [searchText] => once after initial render  + every time after render (my searchText changes)
   useEffect(() => {

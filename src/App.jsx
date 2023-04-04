@@ -15,6 +15,7 @@ import { Footer } from "./components/Footer";
 import "./index.css";
 import Body from "./components/Body";
 import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
+import RestaurantMenu from "./components/RestaurantMenu";
 
 // Never create a new component inside a component because every time AppLayout renders then a component will be created
 // every time
@@ -52,7 +53,7 @@ const appRouter = createBrowserRouter([
       },
       {
         path: "/restaurant/:resId",
-        element: <Contact />,
+        element: <RestaurantMenu />,
       },
     ],
   },

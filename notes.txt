@@ -45,3 +45,5 @@ EP - 7
 
 - Never create a new component inside a component because every time AppLayout renders then a component will be created	every time
 - Never write usestate & useeffect inside if else block or inside for loop
+- React router dom & configured createBrowserRouter
+- Dynamic Router
