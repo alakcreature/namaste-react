@@ -2,20 +2,8 @@ import React, { useEffect, useState } from "react";
 import { restaurantList } from "../constants";
 import RestaurantCard from "./RestaurantCard";
 import Shimmer from "./Shimmer";
-
-function filter(searchText, restaurantlist) {
-  let filteredData;
-  if (searchText === "") {
-    filteredData = [...restaurantlist];
-  } else {
-    filteredData = restaurantlist.filter((res) => {
-      if (res?.data?.data?.name?.toLowerCase().includes(searchText.toLowerCase())) {
-        return res;
-      }
-    });
-  }
-  return filteredData;
-}
+import filter from "../utils/common";
+import useOnline from "../utils/useOnline";
 
 function Body() {
   const [searchText, setSearchText] = useState("");
@@ -36,8 +24,6 @@ function Body() {
     setfilteredrestaurantList(restaurants);
   };
 
-
-
   // empty dependency array => once after every render
   // dep array [searchText] => once after initial render  + every time after render (my searchText changes)
   useEffect(() => {
@@ -45,14 +31,20 @@ function Body() {
     fetchData();
   }, []);
 
+  // let offline = useOnline();
+
+  // if (offline) {
+  //   return <h1> 🍎 Offline, please check your internet connection</h1>;
+  // }
+
   // conditional rendering
   // if restaurant is not there => shimmer loader
   // if it is => actual data
+  if (!restaurantList) return null;
 
-  if(!restaurantList) return null;
-
-
-  return restaurantList?.length === 0 ? <Shimmer /> : (
+  return restaurantList?.length === 0 ? (
+    <Shimmer />
+  ) : (
     <>
       <div className="search-container">
         <input
@@ -74,16 +66,18 @@ function Body() {
         </button>
       </div>
       <div className="restaurant-list">
-        {filteredrestaurantList?.length > 0 ?
+        {filteredrestaurantList?.length > 0 ? (
           filteredrestaurantList.map((restaurant) => {
             return (
               <RestaurantCard
                 key={restaurant.data.data.id}
                 {...restaurant.data.data}
               />
-            ); 
-          }): <h1>No Restaurant match your Filter!!</h1>
-        }
+            );
+          })
+        ) : (
+          <h1>No Restaurant match your Filter!!</h1>
+        )}
       </div>
     </>
   );
