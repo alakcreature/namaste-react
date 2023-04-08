@@ -84,3 +84,22 @@ EP - 9
 - Chinking / Code Splitting / Lazy Loading / Dynamic Bundling / On Demand Loading / Dynamic Importing
 - When we lazy load the component on demand, react suspends the rendering
 - Never load any component dynamically inside any other component because it will lazy load after every render cycle
+
+
+
+
+
+
+
+
+
+EP - 10
+
+- Bundle size will increase drastically if we use any design library
+- We lose control over the design
+- Pros & Cons of using component libraries?
+- Tailwind CSS Framework
+        - CSS on the go
+        - reusability
+        - less bundle size
+-   

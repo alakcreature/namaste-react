@@ -11,7 +11,7 @@ function Header() {
   // Server Side Routing: we need to make request to server for every page.
 
   return (
-    <div className="header">
+    <div className="flex">
       <Title />
       <div className="nav-items">
         <ul>
