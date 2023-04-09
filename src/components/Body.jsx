@@ -46,7 +46,7 @@ function Body() {
     <Shimmer />
   ) : (
     <>
-      <div className="search-container">
+      <div className="search-container p-5 bg-pink-50 my-5">
         <input
           type="text"
           className="search-input"
@@ -55,7 +55,7 @@ function Body() {
           onChange={(e) => setSearchText(e.target.value)}
         />
         <button
-          className="search-btn"
+          className="search-btn p-2 m-2 bg-purple-900 text-white"
           onClick={() => {
             const data = filter(searchText, restaurantList);
             if (data.length > 0) {
@@ -65,7 +65,7 @@ function Body() {
           Search
         </button>
       </div>
-      <div className="restaurant-list">
+      <div className="flex flex-wrap gap-3 p-2 border border-indigo-600">
         {filteredrestaurantList?.length > 0 ? (
           filteredrestaurantList.map((restaurant) => {
             return (

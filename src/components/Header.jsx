@@ -11,23 +11,23 @@ function Header() {
   // Server Side Routing: we need to make request to server for every page.
 
   return (
-    <div className="flex">
+    <div className="flex justify-between bg-pink-50">
       <Title />
-      <div className="nav-items">
-        <ul>
-          <Link to="/">
+      <div className="nav-items ">
+        <ul className="flex py-10">
+          <Link to="/" className="px-10">
             <li>Home</li>
           </Link>
-          <Link to="/about">
+          <Link to="/about" className="px-10">
             <li>About</li>
           </Link>
-          <Link to="/contact">
+          <Link to="/contact" className="px-10">
             <li>Contact</li>
           </Link>
-          <Link to="/cart">
+          <Link to="/cart" className="px-10">
             <li>Cart</li>
           </Link>
-          <Link to="/instamart">
+          <Link to="/instamart" className="px-10">
             <li>Instamart</li>
           </Link>
         </ul>
