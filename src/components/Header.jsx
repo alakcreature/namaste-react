@@ -1,10 +1,12 @@
 // Named Import
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { Link } from "react-router-dom";
 import { Title } from "./Title";
+import UserContext from "../utils/UserContext";
 
 function Header() {
   const [loggedIn, setLoggedIn] = useState(false);
+  const {user} = useContext(UserContext);
 
   // SPA - Single Page Application
   // Client Side Routing: we don't want to load anything from server.
@@ -32,6 +34,8 @@ function Header() {
           </Link>
         </ul>
       </div>
+      <h1>{user.name}</h1>
+
       {!loggedIn ? (
         <button onClick={() => setLoggedIn(true)}>Login</button>
       ) : (

@@ -102,4 +102,22 @@ EP - 10
         - CSS on the go
         - reusability
         - less bundle size
--   
+
+
+
+
+
+
+
+
+
+EP - 11
+
+- Props Drilling: when we pass props from parent to child component hierarchically.
+  - 
+- We can debug our web app by using react dev tools without writing console.log everywhere.
+  - Profiler: shows how our web app was loaded, how much time it took to load
+  - To make our web app optimized, we track everything by Profiler  
+- We lifted the state up from child to parent so that we can control it from parent component.
+- React Context is so fast that it updates the ui everywhere (reconciliation happens everywhere).
+

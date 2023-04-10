@@ -1,5 +1,6 @@
 import React from "react";
 import { Outlet } from "react-router-dom";
+import UserContext from "../utils/UserContext";
 
 // function About() {
 //   return (
@@ -26,6 +27,9 @@ class About extends React.Component {
       <>
         <div>
           About
+          <UserContext.Consumer>
+            {({user})=><h4 className="font-bold text-lg text-red-500 p-10">{user.name} - {user.email}</h4>}
+          </UserContext.Consumer>
           {<Outlet />}
         </div>
       </>

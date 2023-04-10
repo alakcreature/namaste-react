@@ -1,4 +1,4 @@
-import React, { lazy, Suspense } from "react";
+import React, { lazy, Suspense, useEffect, useState } from "react";
 import ReactDOM from "react-dom/client";
 
 // Defualt Import
@@ -18,6 +18,7 @@ import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
 import RestaurantMenu from "./components/RestaurantMenu";
 import Profile from "./components/Profile";
 import Shimmer from "./components/Shimmer";
+import UserContext from "./utils/UserContext";
 
 
 const InstaMart = lazy(()=> import("./components/InstaMart"));
@@ -32,13 +33,24 @@ const About = lazy(()=>import("./components/About"));
 // Never write usestate & useeffect inside if else block or inside for loop
 
 const AppLayout = () => {
+  const [user, setUser] = useState({
+    name:"Shubham",
+    email:"s@gmail.com"
+  });
+
+
+  // Now, we can control the user in provider by useEffect
+  // And Provider is used when we want to change the default value of context value
+
   return (
-    <>
+    <UserContext.Provider value={{
+      user: user
+    }}>
       <Header />
       {/* { Outlet: place where we can render conditionally any component similar to switch case } */}
       <Outlet />
       <Footer />
-    </>
+    </UserContext.Provider>
   );
 };
 
