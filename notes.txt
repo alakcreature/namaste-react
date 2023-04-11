@@ -121,3 +121,42 @@ EP - 11
 - We lifted the state up from child to parent so that we can control it from parent component.
 - React Context is so fast that it updates the ui everywhere (reconciliation happens everywhere).
 
+
+
+
+
+
+
+EP-12
+
+- When we have less complex application, then Context is a right choice but as our application grows then redux should be used because along the line,
+  we will have many contexts for many different components but redux allows ...
+- Disadvantage of redux:
+  - very complex to setup
+- Architecture:
+  - redux is global state variable for the whole application.
+  - redux store is a object.
+  - we will create slices of our store such as user, cart, restaurant etc.
+  - we cannot directly modify the cart slice, we do this by dispatching an action and it calls a function & then it will modify the slice of the store.
+  - This function is known as the reducer.
+  - To read the slice of the store, we need selector to read that.
+  - Always subscribe to the portion of store what we want in a component, otherwise it will create a performance issue.
+  
+
+- Flow:
+  + -> dispatches(action) -> reducer -> updates the store(slice) -> selector (cart component subscribed to the store) -> updates the ui
+
+- Boilerplate:
+  - configureStore from redux-toolkit
+    - reducer: {...all slices} (all the reducers will come in one reducer)
+  - Provider from react-redux
+  - createSlice from RTK -> initialState, reducers (action name & reducer function which will eventually updates the initialState)
+    - name
+    - initialState
+    - reducers :{
+      functions (do not return anything from this)
+    }
+    export const {functions in reducers} = cartSlice.actions;
+    export default cartSlice.reducer;
+  - useSelector() from react-redux to use portion state
+  - useDispatch() from react-redux to dispatch an action.

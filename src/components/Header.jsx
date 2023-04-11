@@ -3,10 +3,12 @@ import { useState, useContext } from "react";
 import { Link } from "react-router-dom";
 import { Title } from "./Title";
 import UserContext from "../utils/UserContext";
+import { useSelector } from "react-redux";
 
 function Header() {
   const [loggedIn, setLoggedIn] = useState(false);
-  const {user} = useContext(UserContext);
+  const { user } = useContext(UserContext);
+  const { items } = useSelector((state) => state.cart);
 
   // SPA - Single Page Application
   // Client Side Routing: we don't want to load anything from server.
@@ -31,6 +33,9 @@ function Header() {
           </Link>
           <Link to="/instamart" className="px-10">
             <li>Instamart</li>
+          </Link>
+          <Link to="/cart">
+            <li className="px-10">Cart - {items?.length} Items</li>
           </Link>
         </ul>
       </div>

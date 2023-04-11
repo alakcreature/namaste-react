@@ -19,14 +19,15 @@ import RestaurantMenu from "./components/RestaurantMenu";
 import Profile from "./components/Profile";
 import Shimmer from "./components/Shimmer";
 import UserContext from "./utils/UserContext";
+import { Provider } from "react-redux";
+import store from "./utils/store";
 
-
-const InstaMart = lazy(()=> import("./components/InstaMart"));
+const InstaMart = lazy(() => import("./components/InstaMart"));
 // upon on demand loading --> upon render --> react suspend loading
 
-
-const About = lazy(()=>import("./components/About"));
-
+const About = lazy(() => import("./components/About"));
+const Cart = lazy(() => import("./components/Cart"));
+// import Cart from "./components/Cart";
 
 // Never create a new component inside a component because every time AppLayout renders then a component will be created
 // every time
@@ -34,23 +35,27 @@ const About = lazy(()=>import("./components/About"));
 
 const AppLayout = () => {
   const [user, setUser] = useState({
-    name:"Shubham",
-    email:"s@gmail.com"
+    name: "Shubham",
+    email: "s@gmail.com",
   });
-
 
   // Now, we can control the user in provider by useEffect
   // And Provider is used when we want to change the default value of context value
 
   return (
-    <UserContext.Provider value={{
-      user: user
-    }}>
-      <Header />
-      {/* { Outlet: place where we can render conditionally any component similar to switch case } */}
-      <Outlet />
-      <Footer />
-    </UserContext.Provider>
+    <>
+      <Provider store={store}>
+        <UserContext.Provider
+          value={{
+            user: user,
+          }}>
+          <Header />
+          {/* { Outlet: place where we can render conditionally any component similar to switch case } */}
+          <Outlet />
+          <Footer />
+        </UserContext.Provider>
+      </Provider>
+    </>
   );
 };
 
@@ -66,23 +71,34 @@ const appRouter = createBrowserRouter([
       },
       {
         path: "/about",
-        element: <Suspense fallback={<Shimmer />}>
-          <About />
-        </Suspense>,
+        element: (
+          <Suspense fallback={<Shimmer />}>
+            <About />
+          </Suspense>
+        ),
         children: [
           {
-            path: "profile",    // parentPath/{path} => localhost:1234/about/profile
-            element: <Profile name="Shubham" />
-          }
-        ]
+            path: "profile", // parentPath/{path} => localhost:1234/about/profile
+            element: <Profile name="Shubham" />,
+          },
+        ],
       },
       {
         path: "/instamart",
-        element: <Suspense fallback={<Shimmer />}>
-          <InstaMart />
-        </Suspense>,
+        element: (
+          <Suspense fallback={<Shimmer />}>
+            <InstaMart />
+          </Suspense>
+        ),
       },
-
+      {
+        path: "/cart",
+        element: (
+          <Suspense fallback={<Shimmer />}>
+            <Cart />
+          </Suspense>
+        ),
+      },
       {
         path: "/contact",
         element: <Contact />,
