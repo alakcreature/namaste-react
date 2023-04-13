@@ -160,3 +160,14 @@ EP-12
     export default cartSlice.reducer;
   - useSelector() from react-redux to use portion state
   - useDispatch() from react-redux to dispatch an action.
+
+
+
+
+
+EP - 13
+
+- Testing with react
+- render from @testing-library/react & @testing-library/jest-dom
+- StaticRouter from react-router-dom/server
+- mock fetch api

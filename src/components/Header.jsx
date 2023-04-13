@@ -35,7 +35,7 @@ function Header() {
             <li>Instamart</li>
           </Link>
           <Link to="/cart">
-            <li className="px-10">Cart - {items?.length} Items</li>
+            <li className="px-10" data-testid="cart">Cart - {items?.length} Items</li>
           </Link>
         </ul>
       </div>

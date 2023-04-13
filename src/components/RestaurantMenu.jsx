@@ -32,13 +32,14 @@ function RestaurantMenu() {
 
           <div className="p-5">
             <h1>Menu</h1>
-            <ul>
+            <ul data-testid="menu">
               {restaurantMenu?.map((itemElement) => {
                 const item = itemElement?.card?.info;
                 return (
                   <li key={item.id}>
                     {item.name}
                     <button
+                    data-testid="addBtn"
                       className="m-2 p-2 bg-green-400"
                       onClick={() => addFoodItem(item)}>
                       Add
