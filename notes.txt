@@ -171,7 +171,12 @@ EP-12
 
 
 
-EP - 13 - testing
+EP - 13
+
+- Testing with react
+- render from @testing-library/react & @testing-library/jest-dom
+- StaticRouter from react-router-dom/server
+- mock fetch api
 
 
 EP-14 & 15
@@ -193,6 +198,3 @@ EP-14 & 15
 - Cache
   - time complexity to search in an array - O(n)
   - time complexity to search in a hash map/object - O(1)
-
-  
-

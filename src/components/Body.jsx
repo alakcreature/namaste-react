@@ -48,6 +48,7 @@ function Body() {
     <>
       <div className="search-container p-5 bg-pink-50 my-5">
         <input
+        data-testid="search-input"
           type="text"
           className="search-input"
           placeholder="Search"
@@ -55,6 +56,7 @@ function Body() {
           onChange={(e) => setSearchText(e.target.value)}
         />
         <button
+        data-testid="search-btn"
           className="search-btn p-2 m-2 bg-purple-900 text-white"
           onClick={() => {
             const data = filter(searchText, restaurantList);
@@ -65,7 +67,7 @@ function Body() {
           Search
         </button>
       </div>
-      <div className="flex flex-wrap gap-3 p-2 border border-indigo-600">
+      <div className="flex flex-wrap gap-3 p-2 border border-indigo-600" data-testid="res-list">
         {filteredrestaurantList?.length > 0 ? (
           filteredrestaurantList.map((restaurant) => {
             return (

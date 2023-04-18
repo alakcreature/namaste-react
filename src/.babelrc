@@ -1,0 +1,18 @@
+{
+  "presets": [
+    ["@babel/preset-env", { "targets": { "node": "current" } }],
+    // because our code is not understanding jsx
+    ["@babel/preset-react", { "runtime": "automatic" }]
+  ]
+}
+
+// {
+//   "plugins": [
+//     [
+//       "transform-remove-console",
+//       {
+//         "excludse": ["error", "warn"]
+//       }
+//     ]
+//   ]
+// }
