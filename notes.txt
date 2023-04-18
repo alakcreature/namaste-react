@@ -160,3 +160,39 @@ EP-12
     export default cartSlice.reducer;
   - useSelector() from react-redux to use portion state
   - useDispatch() from react-redux to dispatch an action.
+
+
+
+
+
+
+
+
+
+
+
+EP - 13 - testing
+
+
+EP-14 & 15
+
+- Higher order components are the components which take a component and returns a component.
+- Using debouncing, we are making huge impact on making less number of api calls.
+- key - 'i'
+  - render the component
+  - useEffect()
+  - start timer => make api call after 200ms
+- key - 'ip'
+  - destroy the component
+  - re-render the component
+  - useEffect()
+  - start timer => make api call after 200ms
+
+
+
+- Cache
+  - time complexity to search in an array - O(n)
+  - time complexity to search in a hash map/object - O(1)
+
+  
+
