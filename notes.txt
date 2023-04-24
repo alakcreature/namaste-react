@@ -198,3 +198,32 @@ EP-14 & 15
 - Cache
   - time complexity to search in an array - O(n)
   - time complexity to search in a hash map/object - O(1)
+
+
+
+
+
+
+EP - 16
+
+- Get Date Live
+- Update the UI
+
+Data Live
+- web socket connection (once the connection is established, the UI & server can send the data across whenever we want)
+  - bi-directional (UI <- -> server)
+  - it does not have regular interval
+  - in applications like whatsapp, order of the message matters
+
+- api polling
+  - at a certain interval, we will check if there is any response (UI <- server)
+  - such as in gmail, cricbuzz.
+
+- youtube live streaming uses api polling of an interval of 1.5 seconds.
+  - It is not freezing because it deletes the comment after 200 messages from top.
+
+- useMemo
+  - Cache the result of a calculation between re-renders
+- useCallback
+  - Cache the function between re-renders
+- useRef lets us reference a value that's not need in rendering
